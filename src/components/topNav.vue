@@ -13,8 +13,29 @@
 			</div>			
 		</div>
 		<div class="seach">
-			<input type="text" value="搜索音乐，歌手，歌词，用户"/>
+			<input type="text" value="搜索音乐，歌手，歌词，用户" onfocus="javascript:if(this.value=='搜索音乐，歌手，歌词，用户'){this.value='';}" onblur="javascript:if(!this.value){this.value='搜索音乐，歌手，歌词，用户';}"/>
 			<i class="iconfont icon-search"></i>
+		</div>
+		
+		<div class="windowTools">
+			<i class="iconfont icon-MAXIMIZE"></i>
+			<i class="iconfont icon-subtract"></i>
+			<i class="iconfont icon-weigouxuan"></i>
+			<i class="iconfont icon-close"></i>
+		</div>
+		<div class="appTools">
+			<i class="iconfont icon-clothes"></i>
+			<i class="iconfont icon-email"></i>
+			<i class="iconfont icon-set"></i>
+		</div>		
+		<div class="user" id="user">
+			<div class="head">
+				<img src="../assets/img/user.png"/>
+			</div>
+			<div class="userNameBox">
+				<span class="userName">未登录</span>
+				<i class="iconfont icon-down"></i>
+			</div>
 		</div>
 	</div>
 </template>
@@ -111,7 +132,7 @@
 			line-height: 22px;
 			color:#dfa094;
 			font-size:12px;
-			&:focus{
+			&:focus + .icon-search,&:focus{
 				color:#fff;					
 			}
 		}
@@ -123,5 +144,71 @@
 			font-size:14px;
 			color:#dfa094;
 		}
+	}
+	
+	.user{
+		float:right;
+		height:@height;		
+		font-size:13px;	
+		color:#ecdcdc;
+		.head{
+			width:24px;
+			height:24px;
+			border-radius:12px;
+			overflow: hidden;
+			float: left;
+			background:#ddd;
+			margin:12px 5px;
+			cursor:pointer; 
+			img{
+				width:100%;
+				height:100%;
+			}
+		}
+		.userNameBox{
+			height:@height;	
+			line-height: @height;
+			cursor:pointer; 
+			float: left;
+			&:hover{
+				color:#fff;
+			}
+			.iconfont{
+				font-size:4px;
+				margin-left:4px;
+			}			
+		}
+	}
+	
+	.windowTools{
+		float:right;
+		height:@height;	
+		line-height: @height;	
+		font-size:13px;	
+		color:#ccdcdc;	
+		padding:0 12px;
+		.iconfont{
+			cursor:pointer; 
+			margin:0 2px;
+			&:hover{
+				color:#fff;
+			}
+		}	
+	}
+	.appTools{
+		float:right;	
+		font-size:13px;	
+		color:#ccdcdc;	
+		padding:2px 12px 2px 6px;
+		margin-top:15px;
+		border-right:1px solid #b13023;
+		.iconfont{
+			cursor:pointer; 
+			margin-left:18px;
+			margin-right:5px;
+			&:hover{
+				color:#fff;
+			}
+		}		
 	}
 </style>
